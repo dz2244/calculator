@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 public class MainActivity extends AppCompatActivity {
     EditText etnd;
+    int counter = 0;
     Boolean clickedEtnd = false;
     Double answer, num ,num2;
     String str;
@@ -24,62 +27,64 @@ public class MainActivity extends AppCompatActivity {
         etnd = findViewById(R.id.etnd);
     }
     public void clickedEtnd(View view) {clickedEtnd = true;}
-    public void clickedBtnPlus(View view) {
+    public void clickedBtnPlus(View view)
+    {
+        counter++;
         str = etnd.getText().toString();
-        if (!str.isEmpty() && clickedEtnd == true)
+        if (!str.isEmpty() && clickedEtnd == true && counter%2==0)
         {
             num = Double.parseDouble(str);
             answer = num+num2;
         }
         else
-        {
-
-        }
+            Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
     }
 
     public void clickedBtnMinus(View view)
         {
+            counter++;
             str = etnd.getText().toString();
-            if (!str.isEmpty() && clickedEtnd == true)
+            if (!str.isEmpty() && clickedEtnd == true && counter%2==0)
             {
                 num = Double.parseDouble(str);
-                answer -= num;
+                answer = num-num2;
             }
             else
-            {
-                etnd.setText("try again");
-            }
+                Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
         }
 
     public void clickedBtnCefel(View view)
         {
+            counter++;
             str = etnd.getText().toString();
-            if (!str.isEmpty() && clickedEtnd == true)
+            if (!str.isEmpty() && clickedEtnd == true && counter%2==0)
             {
                 num = Double.parseDouble(str);
-                answer *= num;
+                answer = num*num2;
             }
             else
-            {
-                etnd.setText("try again");
-            }
+                Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
         }
 
 
-    public void clickedBtnDiv(View view) {
+    public void clickedBtnDiv(View view)
+    {
+        counter++;
         str = etnd.getText().toString();
-        if (!str.isEmpty() && clickedEtnd == true) {
+        if (!str.isEmpty() && clickedEtnd == true && counter%2==0) {
             num = Double.parseDouble(str);
-            answer /= num;
-        } else {
-            etnd.setText("try again");
+            answer = num/num2;
         }
+        else
+            Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
     }
 
     public void clickedBtnReset(View view)
     {
         etnd.setText("");
         num = 0.0;
+        clickedEtnd = false;
+
     }
 
 
