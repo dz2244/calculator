@@ -69,20 +69,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    public void clickedBtnDiv(View view)
-    {
+    public void clickedBtnDiv(View view) {
         str = etnd.getText().toString();
-        if (!str.isEmpty() && clickedEtnd == true )
-        {
+        if (!str.isEmpty() && clickedEtnd == true) {
             int num = Integer.parseInt(str);
             num2 = (double) num;
             answer /= num;
-        }
-        else
-        {
+        } else {
             etnd.setText("try again");
         }
-
+    }
 
     public void clickedBtnReset(View view)
     {
@@ -90,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         num = 0.0;
     }
 
-    }
 
     public void clickedBtnResult(View view)
     {
