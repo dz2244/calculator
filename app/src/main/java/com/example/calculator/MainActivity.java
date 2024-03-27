@@ -7,7 +7,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     EditText etnd;
     Boolean clickedEtnd = false;
-    int answer, num ;
+    Double answer, num ,num2;
     String str;
     Button btnResult ,btnCredits ,btnReset ,btnDiv ,btnCefel ,btnMinus ,btnPlus;
     @Override
@@ -26,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
     public void clickedEtnd(View view) {clickedEtnd = true;}
     public void clickedBtnPlus(View view) {
         str = etnd.getText().toString();
-        etnd.setText("");
         if (!str.isEmpty() && clickedEtnd == true)
         {
             int num = Integer.parseInt(str);
+            num2 = (double) num;
             answer += num;
             etnd.setText(String.valueOf(answer));
         }
@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
     public void clickedBtnMinus(View view)
         {
             str = etnd.getText().toString();
-            etnd.setText("");
             if (!str.isEmpty() && clickedEtnd == true)
             {
                 int num = Integer.parseInt(str);
+                num2 = (double) num;
                 answer -= num;
                 etnd.setText(String.valueOf(answer));
             }
@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
     public void clickedBtnCefel(View view)
         {
             str = etnd.getText().toString();
-            etnd.setText("");
             if (!str.isEmpty() && clickedEtnd == true)
             {
                 int num = Integer.parseInt(str);
+                num2 = (double) num;
                 answer *= num;
                 etnd.setText(String.valueOf(answer));
             }
@@ -75,10 +75,10 @@ public class MainActivity extends AppCompatActivity {
     public void clickedBtnDiv(View view)
     {
         str = etnd.getText().toString();
-        etnd.setText("");
         if (!str.isEmpty() && clickedEtnd == true )
         {
             int num = Integer.parseInt(str);
+            num2 = (double) num;
             answer /= num;
             etnd.setText(String.valueOf(answer));
         }
@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickedBtnReset(View view)
     {
+        etnd.setText("");
+        num = 0.0;
+    }
 
     }
 
