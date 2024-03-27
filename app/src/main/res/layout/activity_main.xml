@@ -55,16 +55,56 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="write something here:"
+    <EditText
+        android:id="@+id/etnd"
+        android:layout_width="412dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:hint="enter something:"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="180dp"
+        android:text="A/C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnResult"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnResult"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.309" />
+
+    <Button
+        android:id="@+id/btnCredits"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="311dp"
+        android:text="credits"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.974" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
