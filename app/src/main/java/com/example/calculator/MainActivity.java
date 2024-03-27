@@ -1,6 +1,7 @@
 package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +19,38 @@ public class MainActivity extends AppCompatActivity {
         btnCefel = findViewById(R.id.btnCefel);
         btnCredits = findViewById(R.id.btnCredits);
         etnd = findViewById(R.id.etnd);
+    }
+    public void clickedBtnPlus(View view)
+    {
 
+    }
+
+    public void clickedBtnMinus(View view)
+    {
+
+    }
+
+    public void clickedBtnCefel(View view)
+    {
+
+    }
+
+    public void clickedBtnDiv(View view)
+    {
+
+    }
+
+    public void clickedBtnReset(View view)
+    {
+
+    }
+
+    public void clickedBtnResult(View view)
+    {
+
+    }
+    public void clickedBtnCredits(View view)
+    {
 
     }
 }
