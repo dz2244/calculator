@@ -28,13 +28,12 @@ public class MainActivity extends AppCompatActivity {
         str = etnd.getText().toString();
         if (!str.isEmpty() && clickedEtnd == true)
         {
-            int num = Integer.parseInt(str);
-            num2 = (double) num;
-            answer += num;
+            num = Double.parseDouble(str);
+            answer = num+num2;
         }
         else
         {
-            etnd.setText("try again");
+
         }
     }
 
@@ -43,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
             str = etnd.getText().toString();
             if (!str.isEmpty() && clickedEtnd == true)
             {
-                int num = Integer.parseInt(str);
-                num2 = (double) num;
+                num = Double.parseDouble(str);
                 answer -= num;
             }
             else
@@ -58,8 +56,7 @@ public class MainActivity extends AppCompatActivity {
             str = etnd.getText().toString();
             if (!str.isEmpty() && clickedEtnd == true)
             {
-                int num = Integer.parseInt(str);
-                num2 = (double) num;
+                num = Double.parseDouble(str);
                 answer *= num;
             }
             else
@@ -72,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickedBtnDiv(View view) {
         str = etnd.getText().toString();
         if (!str.isEmpty() && clickedEtnd == true) {
-            int num = Integer.parseInt(str);
-            num2 = (double) num;
+            num = Double.parseDouble(str);
             answer /= num;
         } else {
             etnd.setText("try again");
