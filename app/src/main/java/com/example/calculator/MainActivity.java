@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
             int num = Integer.parseInt(str);
             num2 = (double) num;
             answer += num;
-            etnd.setText(String.valueOf(answer));
         }
         else
         {
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 int num = Integer.parseInt(str);
                 num2 = (double) num;
                 answer -= num;
-                etnd.setText(String.valueOf(answer));
             }
             else
             {
@@ -63,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 int num = Integer.parseInt(str);
                 num2 = (double) num;
                 answer *= num;
-                etnd.setText(String.valueOf(answer));
             }
             else
             {
@@ -80,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
             int num = Integer.parseInt(str);
             num2 = (double) num;
             answer /= num;
-            etnd.setText(String.valueOf(answer));
         }
         else
         {
@@ -98,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickedBtnResult(View view)
     {
-
+        etnd.setText(String.valueOf(answer));
     }
     public void clickedBtnCredits(View view)
     {
