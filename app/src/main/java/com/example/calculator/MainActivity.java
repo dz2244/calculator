@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     int counter = 0;
     Boolean clickedEtnd = false;
     Double answer, num ,num2;
-    String str;
+    String str,str2;
     Button btnResult ,btnCredits ,btnReset ,btnDiv ,btnCefel ,btnMinus ,btnPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,51 +29,78 @@ public class MainActivity extends AppCompatActivity {
     public void clickedEtnd(View view) {clickedEtnd = true;}
     public void clickedBtnPlus(View view)
     {
+        counter = (counter + 1) % 2;
+        str = etnd.getText().toString();
+        if(!str.equals("") && clickedEtnd == true )
+        {
+            if (counter == 1) {
+                num = Double.parseDouble(str);
+            }
+            else
+            {
+                num2 = Double.parseDouble(str);
+                answer = num + num2;
+            }
+        }
+        else
+            Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
+        etnd.setText("");
+    }
+
+    public void clickedBtnMinus(View view)
+    {
         counter++;
         str = etnd.getText().toString();
-        if (!str.isEmpty() && clickedEtnd == true && counter%2==0)
+        if(!str.isEmpty() && clickedEtnd == true )
         {
-            num = Double.parseDouble(str);
-            answer = num+num2;
+            if (counter % 2 == 1) {
+                num = Double.parseDouble(str);
+            }
+            else
+            {
+                num2 = Double.parseDouble(str2);
+                answer = num - num2;
+            }
         }
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
     }
 
-    public void clickedBtnMinus(View view)
-        {
-            counter++;
-            str = etnd.getText().toString();
-            if (!str.isEmpty() && clickedEtnd == true && counter%2==0)
-            {
-                num = Double.parseDouble(str);
-                answer = num-num2;
-            }
-            else
-                Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
-        }
-
     public void clickedBtnCefel(View view)
+    {
+        counter++;
+        str = etnd.getText().toString();
+        if(!str.isEmpty() && clickedEtnd == true )
         {
-            counter++;
-            str = etnd.getText().toString();
-            if (!str.isEmpty() && clickedEtnd == true && counter%2==0)
-            {
+            if (counter % 2 == 1) {
                 num = Double.parseDouble(str);
-                answer = num*num2;
             }
             else
-                Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
+            {
+                num2 = Double.parseDouble(str2);
+                answer = num * num2;
+            }
         }
+        else
+            Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
+    }
 
 
     public void clickedBtnDiv(View view)
     {
         counter++;
         str = etnd.getText().toString();
-        if (!str.isEmpty() && clickedEtnd == true && counter%2==0) {
-            num = Double.parseDouble(str);
-            answer = num/num2;
+        if(!str.isEmpty() && clickedEtnd == true )
+        {
+            if (counter % 2 == 1)
+            {
+                num = Double.parseDouble(str);
+            }
+            else
+            {
+                num2 = Double.parseDouble(str2);
+                answer = num + num2;
+            }
         }
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
@@ -83,14 +110,14 @@ public class MainActivity extends AppCompatActivity {
     {
         etnd.setText("");
         num = 0.0;
+        num2 = 0.0;
         clickedEtnd = false;
 
     }
-
-
     public void clickedBtnResult(View view)
     {
-        etnd.setText(String.valueOf(answer));
+        Toast.makeText(this, answer +"", Toast.LENGTH_SHORT).show();
+        //etnd.setText(""+answer);
     }
     public void clickedBtnCredits(View view)
     {
