@@ -11,7 +11,8 @@ public class MainActivity extends AppCompatActivity {
     int counter = 0;
     Boolean clickedEtnd = false;
     Double answer, num ,num2;
-    String str,str2;
+    String str, str2;
+    char mode;
     Button btnResult ,btnCredits ,btnReset ,btnDiv ,btnCefel ,btnMinus ,btnPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +32,9 @@ public class MainActivity extends AppCompatActivity {
     {
         counter = (counter + 1) % 2;
         str = etnd.getText().toString();
+        mode = '+';
         if(!str.equals("") && clickedEtnd == true )
-        {
-            if (counter == 1) {
                 num = Double.parseDouble(str);
-            }
-            else
-            {
-                num2 = Double.parseDouble(str);
-                answer = num + num2;
-            }
-        }
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
         etnd.setText("");
@@ -65,7 +58,15 @@ public class MainActivity extends AppCompatActivity {
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
     }
-
+    public double readNumber(double num){
+        if(!str.equals("") && clickedEtnd == true )
+            if (num == 0)
+                return 0;
+        else
+            Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
+        etnd.setText("");
+        return num;
+    }
     public void clickedBtnCefel(View view)
     {
         counter++;
@@ -116,8 +117,25 @@ public class MainActivity extends AppCompatActivity {
     }
     public void clickedBtnResult(View view)
     {
-        Toast.makeText(this, answer +"", Toast.LENGTH_SHORT).show();
-        //etnd.setText(""+answer);
+        str = etnd.getText().toString();
+        num2 = Double.parseDouble(str);
+        Toast.makeText(this, "1: "+num+"; 2: "+num2, Toast.LENGTH_SHORT).show();
+        if (mode == '+')
+            answer = num + num2;
+        else if (mode == '-')
+            answer = num - num2;
+        else if (mode == '*')
+            answer = num * num2;
+        else if (mode == '/'){
+            if (num2 == 0) {
+                Toast.makeText(this, "Can not divide by zero!!", Toast.LENGTH_SHORT).show();
+                answer = 0.0;
+            }
+            else
+                answer = num / num2;
+        }
+        Toast.makeText(this, ""+answer, Toast.LENGTH_SHORT).show();
+        etnd.setText(""+answer);
     }
     public void clickedBtnCredits(View view)
     {
