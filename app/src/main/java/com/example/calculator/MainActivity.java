@@ -42,24 +42,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickedBtnMinus(View view)
     {
-        counter++;
+        counter = (counter + 1) % 2;
         str = etnd.getText().toString();
-        if(!str.isEmpty() && clickedEtnd == true )
-        {
-            if (counter % 2 == 1) {
-                num = Double.parseDouble(str);
-            }
-            else
-            {
-                num2 = Double.parseDouble(str2);
-                answer = num - num2;
-            }
-        }
+        mode = '-';
+        if(!str.equals("") && clickedEtnd == true )
+            num = Double.parseDouble(str);
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
+        etnd.setText("");
     }
     public double readNumber(double num){
-        if(!str.equals("") && clickedEtnd == true )
+        if(!str.equals("") && clickedEtnd == true)
             if (num == 0)
                 return 0;
         else
@@ -69,42 +62,27 @@ public class MainActivity extends AppCompatActivity {
     }
     public void clickedBtnCefel(View view)
     {
-        counter++;
+        counter = (counter + 1) % 2;
         str = etnd.getText().toString();
-        if(!str.isEmpty() && clickedEtnd == true )
-        {
-            if (counter % 2 == 1) {
-                num = Double.parseDouble(str);
-            }
-            else
-            {
-                num2 = Double.parseDouble(str2);
-                answer = num * num2;
-            }
-        }
+        mode = '*';
+        if(!str.equals("") && clickedEtnd == true )
+            num = Double.parseDouble(str);
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
+        etnd.setText("");
     }
 
 
     public void clickedBtnDiv(View view)
     {
-        counter++;
+        counter = (counter + 1) % 2;
         str = etnd.getText().toString();
-        if(!str.isEmpty() && clickedEtnd == true )
-        {
-            if (counter % 2 == 1)
-            {
-                num = Double.parseDouble(str);
-            }
-            else
-            {
-                num2 = Double.parseDouble(str2);
-                answer = num + num2;
-            }
-        }
+        mode = '/';
+        if(!str.equals("") && clickedEtnd == true )
+            num = Double.parseDouble(str);
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
+        etnd.setText("");
     }
 
     public void clickedBtnReset(View view)
@@ -113,21 +91,21 @@ public class MainActivity extends AppCompatActivity {
         num = 0.0;
         num2 = 0.0;
         clickedEtnd = false;
-
     }
     public void clickedBtnResult(View view)
     {
         str = etnd.getText().toString();
         num2 = Double.parseDouble(str);
-        Toast.makeText(this, "1: "+num+"; 2: "+num2, Toast.LENGTH_SHORT).show();
         if (mode == '+')
             answer = num + num2;
         else if (mode == '-')
             answer = num - num2;
         else if (mode == '*')
             answer = num * num2;
-        else if (mode == '/'){
-            if (num2 == 0) {
+        else if (mode == '/')
+        {
+            if (num2 == 0)
+            {
                 Toast.makeText(this, "Can not divide by zero!!", Toast.LENGTH_SHORT).show();
                 answer = 0.0;
             }
