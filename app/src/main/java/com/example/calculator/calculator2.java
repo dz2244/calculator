@@ -14,16 +14,16 @@ public class calculator2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator2);
+
         answer = findViewById(R.id.answer);
         Intent get = getIntent();
-        double x1 = get.getDoubleExtra("",1);
-        String x2 = String.valueOf(x1);
-        answer.setText(x2);
+        double x1 = get.getDoubleExtra("369", 1);
+        answer.setText(""+x1);
     }
 
     public void clickedBtn(View view) {
-        Intent ioeohad2 = new Intent(this, MainActivity.class);
-        startActivity(ioeohad2);
+        finish();
+
 
     }
 }

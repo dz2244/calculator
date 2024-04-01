@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etnd;
     int counter = 0;
     Boolean clickedEtnd = false;
-    Double answer, num ,num2;
+    Double answer, num ,num2,answer2;
     String str;
     char mode;
     @Override
@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
         etnd.setText("");
     }
-
-
     public void clickedBtnDiv(View view)
     {
         counter = (counter + 1) % 2;
@@ -78,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
         etnd.setText("");
     }
-
     public void clickedBtnReset(View view)
     {
         etnd.setText("");
@@ -89,30 +86,33 @@ public class MainActivity extends AppCompatActivity {
     public void clickedBtnResult(View view)
     {
         str = etnd.getText().toString();
-        num2 = Double.parseDouble(str);
-        if (mode == '+')
-            answer = num + num2;
-        else if (mode == '-')
-            answer = num - num2;
-        else if (mode == '*')
-            answer = num * num2;
-        else if (mode == '/')
+        if(!str.isEmpty())
         {
-            if (num2 == 0)
+            num2 = Double.parseDouble(str);
+            if (mode == '+')
+                answer = num + num2;
+            else if (mode == '-')
+                answer = num - num2;
+            else if (mode == '*')
+                answer = num * num2;
+            else if (mode == '/')
             {
-                Toast.makeText(this, "Can not divide by zero!!", Toast.LENGTH_SHORT).show();
-                answer = 0.0;
+                if (num2 == 0)
+                {
+                    Toast.makeText(this, "Can not divide by zero!!", Toast.LENGTH_SHORT).show();
+                    answer = 0.0;
+                }
+                else
+                    answer = num / num2;
             }
-            else
-                answer = num / num2;
+            answer2 = answer;
+            etnd.setText("" + answer);
         }
-        Toast.makeText(this, ""+answer, Toast.LENGTH_SHORT).show();
-        etnd.setText(""+answer);
     }
     public void clickedBtnCredits(View view)
     {
         Intent ioeohad = new Intent(this,calculator2.class);
-        ioeohad.putExtra("369",answer);
+        ioeohad.putExtra("369",answer2);
         startActivity(ioeohad);
     }
 }
