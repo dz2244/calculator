@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         str = etnd.getText().toString();
         mode = '+';
         if(!str.equals("") && clickedEtnd == true )
-                num = Double.parseDouble(str);
+            num = Double.parseDouble(str);
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
         etnd.setText("");
