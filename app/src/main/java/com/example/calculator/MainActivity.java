@@ -1,5 +1,7 @@
 package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,20 +13,12 @@ public class MainActivity extends AppCompatActivity {
     int counter = 0;
     Boolean clickedEtnd = false;
     Double answer, num ,num2;
-    String str, str2;
+    String str;
     char mode;
-    Button btnResult ,btnCredits ,btnReset ,btnDiv ,btnCefel ,btnMinus ,btnPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnResult = findViewById(R.id.btnResult);
-        btnReset = findViewById(R.id.btnReset);
-        btnPlus = findViewById(R.id.btnPlus);
-        btnMinus = findViewById(R.id.btnMinus);
-        btnDiv = findViewById(R.id.btnDiv);
-        btnCefel = findViewById(R.id.btnCefel);
-        btnCredits = findViewById(R.id.btnCredits);
         etnd = findViewById(R.id.etnd);
     }
     public void clickedEtnd(View view) {clickedEtnd = true;}
@@ -117,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void clickedBtnCredits(View view)
     {
-
+        Intent ioeohad = new Intent(this,calculator2.class);
+        ioeohad.putExtra("369",answer);
+        startActivity(ioeohad);
     }
 }
