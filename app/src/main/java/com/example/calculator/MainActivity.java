@@ -21,13 +21,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         etnd = findViewById(R.id.etnd);
     }
-    public void clickedEtnd(View view) {clickedEtnd = true;}
     public void clickedBtnPlus(View view)
     {
         counter = (counter + 1) % 2;
         str = etnd.getText().toString();
         mode = '+';
-        if(!str.equals("") && clickedEtnd == true )
+        if(!str.equals("") )
             num = Double.parseDouble(str);
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
@@ -39,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         counter = (counter + 1) % 2;
         str = etnd.getText().toString();
         mode = '-';
-        if(!str.equals("") && clickedEtnd == true )
+        if(!str.equals(""))
             num = Double.parseDouble(str);
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
         etnd.setText("");
     }
     public double readNumber(double num){
-        if(!str.equals("") && clickedEtnd == true)
+        if(!str.equals(""))
             if (num == 0)
                 return 0;
         else
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         counter = (counter + 1) % 2;
         str = etnd.getText().toString();
         mode = '*';
-        if(!str.equals("") && clickedEtnd == true )
+        if(!str.equals(""))
             num = Double.parseDouble(str);
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         counter = (counter + 1) % 2;
         str = etnd.getText().toString();
         mode = '/';
-        if(!str.equals("") && clickedEtnd == true )
+        if(!str.equals(""))
             num = Double.parseDouble(str);
         else
             Toast.makeText(this, "error,enter a number ", Toast.LENGTH_SHORT).show();
