@@ -85,7 +85,11 @@ public class MainActivity extends AppCompatActivity {
     public void clickedBtnResult(View view)
     {
         str = etnd.getText().toString();
-        if(!str.isEmpty())
+        if(str == null)
+        {
+            Toast.makeText(this, "you need to enter another number", Toast.LENGTH_SHORT).show();
+        }
+        if(!str.isEmpty() && str != null)
         {
             num2 = Double.parseDouble(str);
             if (mode == '+')
@@ -99,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 if (num2 == 0)
                 {
                     Toast.makeText(this, "Can not divide by zero!!", Toast.LENGTH_SHORT).show();
-                    answer = 0.0;
+
                 }
                 else
                     answer = num / num2;
@@ -113,5 +117,9 @@ public class MainActivity extends AppCompatActivity {
         Intent ioeohad = new Intent(this,calculator2.class);
         ioeohad.putExtra("369",answer2);
         startActivity(ioeohad);
+    }
+
+    public void clickedEt(View view) {
+        Toast.makeText(this, "you cannot press the edit text", Toast.LENGTH_SHORT).show();
     }
 }
